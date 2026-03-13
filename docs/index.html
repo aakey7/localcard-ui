@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LocalCard UI — Design System</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwindcss.config = {
+  theme: {
+    extend: {
+      colors: {
+        lc: {
+          primary: { 50:'#e8f5ec',100:'#c6e7cf',200:'#9dd6ac',300:'#6ec385',400:'#3fb363',500:'#14A248',600:'#12903E',700:'#0F6B35',800:'#0D4F28',900:'#08331A' },
+          surface: { 0:'#0e0e18',50:'#141420',100:'#1e1e2e',200:'#313244',300:'#45475a',400:'#585b70',500:'#6c7086',600:'#9399b2',700:'#a6adc8',800:'#cdd6f4',900:'#f0f0f5' },
+          light: { bg:'#ffffff',surface:'#f8f8f8',muted:'#F5F5F5',border:'#e5e7eb',text:'#1a1a2e',subtle:'#6b7280' },
+          accent: { 300:'#f0ff85',400:'#DDFE57',500:'#c4e220' },
+          error: { 400:'#ff6b6b',500:'#F30501',600:'#d40301' },
+          warning: { 400:'#fbbf24',500:'#f59e0b' },
+          info: { 400:'#60a5fa',500:'#1E6FA7',600:'#1B4D8E' },
+          success: { 400:'#3fb363',500:'#14A248' },
+          navy: '#1B2A4A',
+        },
+        brand: { 50:'#e8f5ec',100:'#c6e7cf',200:'#9dd6ac',300:'#6ec385',400:'#3fb363',500:'#14A248',600:'#12903E',700:'#0F6B35',800:'#0D4F28',900:'#08331A' },
+      },
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'] },
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Inter', system-ui, sans-serif; }
+  body { background: #0e0e18; }
+  .section { scroll-margin-top: 80px; }
+  .swatch { transition: transform 0.15s; }
+  .swatch:hover { transform: scale(1.08); }
+  .code { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+</style>
+</head>
+<body class="text-[#cdd6f4] min-h-screen">
+
+<!-- Nav -->
+<nav class="sticky top-0 z-50 bg-[#0e0e18]/90 backdrop-blur-lg border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-[#14A248] flex items-center justify-center text-white font-bold text-sm">LC</div>
+      <span class="font-semibold text-lg">LocalCard UI</span>
+      <span class="text-xs text-[#6c7086] ml-2">v0.1.0</span>
+    </div>
+    <div class="hidden sm:flex gap-6 text-sm text-[#9399b2]">
+      <a href="#colors" class="hover:text-white transition">Colors</a>
+      <a href="#buttons" class="hover:text-white transition">Buttons</a>
+      <a href="#cards" class="hover:text-white transition">Cards</a>
+      <a href="#badges" class="hover:text-white transition">Badges</a>
+      <a href="#inputs" class="hover:text-white transition">Inputs</a>
+      <a href="#typography" class="hover:text-white transition">Type</a>
+      <a href="#report" class="hover:text-white transition">Report</a>
+    </div>
+  </div>
+</nav>
+
+<div class="max-w-6xl mx-auto px-6 py-12">
+
+  <!-- Hero -->
+  <div class="mb-16">
+    <h1 class="text-4xl font-bold mb-3">Design System</h1>
+    <p class="text-[#9399b2] text-lg max-w-xl">Brand tokens, components, and guidelines for all LocalCard projects.</p>
+    <div class="flex gap-3 mt-6">
+      <code class="text-xs bg-[#1e1e2e] border border-[#313244] rounded-lg px-4 py-2 text-[#a6adc8]">npm install @localcard/ui</code>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <section id="colors" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Colors</h2>
+    <p class="text-sm text-[#6c7086] mb-8">All colour scales available as Tailwind classes (<code class="code">bg-lc-primary-500</code>) and CSS vars (<code class="code">var(--lc-primary-500)</code>).</p>
+
+    <!-- Primary -->
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-[#6c7086] mb-3">Primary</h3>
+    <div class="flex gap-2 mb-6 flex-wrap">
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-50"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">50</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-100"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">100</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-200"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">200</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-300"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">300</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-400"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">400</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-500 ring-2 ring-lc-primary-500/30"></div><p class="text-[10px] text-center mt-1 font-medium text-[#cdd6f4]">500 ★</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-600"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">600</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-700"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">700</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-800"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">800</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-primary-900"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">900</p></div>
+    </div>
+
+    <!-- Surface -->
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-[#6c7086] mb-3">Surface (Dark Mode)</h3>
+    <div class="flex gap-2 mb-6 flex-wrap">
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-[#0e0e18] border border-[#313244]"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">0</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-surface-50 border border-[#313244]"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">50</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-surface-100"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">100</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-surface-200"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">200</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-surface-300"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">300</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-surface-400"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">400</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-lc-surface-500"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">500</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-[#9399b2]"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">600</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-[#a6adc8]"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">700</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-[#cdd6f4]"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">800</p></div>
+      <div class="swatch"><div class="w-16 h-16 rounded-xl bg-[#f0f0f5]"></div><p class="text-[10px] text-center mt-1 text-[#6c7086]">900</p></div>
+    </div>
+
+    <!-- Accent + Semantic -->
+    <h3 class="text-sm font-semibold uppercase tracking-wider text-[#6c7086] mb-3">Accent & Semantic</h3>
+    <div class="flex gap-4 mb-6 flex-wrap">
+      <div class="text-center swatch"><div class="w-16 h-16 rounded-xl bg-lc-accent-400"></div><p class="text-[10px] mt-1 text-[#6c7086]">Accent</p></div>
+      <div class="text-center swatch"><div class="w-16 h-16 rounded-xl bg-lc-error-500"></div><p class="text-[10px] mt-1 text-[#6c7086]">Error</p></div>
+      <div class="text-center swatch"><div class="w-16 h-16 rounded-xl bg-lc-warning-500"></div><p class="text-[10px] mt-1 text-[#6c7086]">Warning</p></div>
+      <div class="text-center swatch"><div class="w-16 h-16 rounded-xl bg-lc-info-500"></div><p class="text-[10px] mt-1 text-[#6c7086]">Info</p></div>
+      <div class="text-center swatch"><div class="w-16 h-16 rounded-xl bg-lc-navy"></div><p class="text-[10px] mt-1 text-[#6c7086]">Navy</p></div>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section id="buttons" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Buttons</h2>
+    <p class="text-sm text-[#6c7086] mb-8">6 variants × 3 sizes. Import <code class="code">Button</code> or use the class strings directly.</p>
+
+    <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-8 space-y-8">
+      <!-- Variants -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-4">Variants</p>
+        <div class="flex flex-wrap gap-3">
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg bg-lc-primary-500 text-white hover:bg-lc-primary-600 transition">Primary</button>
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg bg-lc-surface-200 text-lc-surface-800 hover:bg-lc-surface-300 transition">Secondary</button>
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg border border-lc-primary-500 text-lc-primary-500 hover:bg-lc-primary-500 hover:text-white transition">Outline</button>
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg text-[#9399b2] hover:bg-lc-surface-100 hover:text-lc-surface-800 transition">Ghost</button>
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg bg-lc-error-500 text-white hover:opacity-90 transition">Danger</button>
+          <button class="inline-flex items-center justify-center font-semibold text-sm px-4 py-2 rounded-lg bg-lc-accent-400 text-[#0e0e18] hover:bg-lc-accent-300 transition">Accent</button>
+        </div>
+      </div>
+
+      <!-- Sizes -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-4">Sizes</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <button class="inline-flex items-center justify-center font-medium text-xs px-3 py-1.5 rounded-md bg-lc-primary-500 text-white">Small</button>
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg bg-lc-primary-500 text-white">Medium</button>
+          <button class="inline-flex items-center justify-center font-medium text-base px-6 py-3 rounded-xl bg-lc-primary-500 text-white">Large</button>
+        </div>
+      </div>
+
+      <!-- Disabled -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-4">States</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg bg-lc-primary-500 text-white opacity-50 cursor-not-allowed">Disabled</button>
+          <button class="inline-flex items-center justify-center font-medium text-sm px-4 py-2 rounded-lg bg-lc-primary-500 text-white ring-2 ring-lc-primary-400 ring-offset-2 ring-offset-[#141420]">Focused</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section id="cards" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Cards</h2>
+    <p class="text-sm text-[#6c7086] mb-8">5 variants for different contexts.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-5">
+        <p class="text-xs text-[#6c7086] uppercase tracking-wider mb-2">Default</p>
+        <p class="text-sm">Standard card for content sections.</p>
+      </div>
+      <div class="bg-lc-surface-100 border border-lc-surface-200 rounded-2xl p-5 shadow-md">
+        <p class="text-xs text-[#6c7086] uppercase tracking-wider mb-2">Elevated</p>
+        <p class="text-sm">Lifted card with shadow for emphasis.</p>
+      </div>
+      <div class="bg-transparent border border-lc-surface-300 rounded-2xl p-5">
+        <p class="text-xs text-[#6c7086] uppercase tracking-wider mb-2">Bordered</p>
+        <p class="text-sm">Transparent with visible border.</p>
+      </div>
+      <div class="bg-lc-surface-100/60 backdrop-blur-md border border-white/5 rounded-2xl p-5">
+        <p class="text-xs text-[#6c7086] uppercase tracking-wider mb-2">Glass</p>
+        <p class="text-sm">Frosted glass for overlays.</p>
+      </div>
+      <div class="bg-white border border-[#e5e7eb] rounded-2xl p-5 shadow-sm text-[#1a1a2e]">
+        <p class="text-xs text-[#6b7280] uppercase tracking-wider mb-2">Light</p>
+        <p class="text-sm">White card for light mode / print.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Badges -->
+  <section id="badges" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Badges</h2>
+    <p class="text-sm text-[#6c7086] mb-8">Status indicators and labels.</p>
+
+    <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-8">
+      <div class="flex flex-wrap gap-3">
+        <span class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-lc-primary-500/15 text-lc-primary-400 border border-lc-primary-500/20">Primary</span>
+        <span class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-lc-accent-400/15 text-lc-accent-400 border border-lc-accent-400/20">Accent</span>
+        <span class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-lc-error-500/15 text-lc-error-400 border border-lc-error-500/20">Error</span>
+        <span class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-lc-info-500/15 text-blue-400 border border-lc-info-500/20">Info</span>
+        <span class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-lc-surface-200/50 text-[#6c7086] border border-lc-surface-300/30">Neutral</span>
+        <span class="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-lc-success-500/15 text-lc-success-400 border border-lc-success-500/20">Success</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inputs -->
+  <section id="inputs" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Inputs</h2>
+    <p class="text-sm text-[#6c7086] mb-8">Form elements for dark and light contexts.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-6 space-y-4">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086]">Dark Variant</p>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium uppercase tracking-wider text-lc-surface-500">Email</label>
+          <input type="text" placeholder="you@localcard.io" class="w-full bg-lc-surface-100 border border-lc-surface-200 text-lc-surface-800 placeholder-lc-surface-400 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-lc-primary-500 transition">
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium uppercase tracking-wider text-lc-surface-500">Password</label>
+          <input type="password" value="hunter2" class="w-full bg-lc-surface-100 border border-lc-surface-200 text-lc-surface-800 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-lc-primary-500 transition">
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium uppercase tracking-wider text-lc-surface-500">With Error</label>
+          <input type="text" value="bad input" class="w-full bg-lc-surface-100 border border-lc-error-500 text-lc-surface-800 rounded-lg px-4 py-2.5 text-sm">
+          <p class="text-xs text-lc-error-400">This field is required.</p>
+        </div>
+      </div>
+
+      <div class="bg-white border border-[#e5e7eb] rounded-2xl p-6 space-y-4">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6b7280]">Light Variant</p>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium uppercase tracking-wider text-[#6b7280]">Company</label>
+          <input type="text" placeholder="LocalCard Pty Ltd" class="w-full bg-white border border-[#e5e7eb] text-[#1a1a2e] placeholder-[#6b7280] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-lc-primary-500 transition">
+        </div>
+        <div class="space-y-1.5">
+          <label class="block text-xs font-medium uppercase tracking-wider text-[#6b7280]">Amount</label>
+          <input type="text" placeholder="$0.00" class="w-full bg-white border border-[#e5e7eb] text-[#1a1a2e] placeholder-[#6b7280] rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-lc-primary-500 transition">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Typography -->
+  <section id="typography" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Typography</h2>
+    <p class="text-sm text-[#6c7086] mb-8">Inter as the primary typeface. Scale from xs to 4xl.</p>
+
+    <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-8 space-y-4">
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">4xl</span><p class="text-4xl font-bold">LocalCard</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">3xl</span><p class="text-3xl font-bold">Gift Card Platform</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">2xl</span><p class="text-2xl font-semibold">Category Spend Report</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">xl</span><p class="text-xl font-semibold">Section Heading</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">lg</span><p class="text-lg">Card title or subtitle</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">base</span><p class="text-base">Body text — the default reading size for paragraphs and content.</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">sm</span><p class="text-sm text-[#9399b2]">Secondary text, descriptions, metadata</p></div>
+      <div class="flex items-baseline gap-4"><span class="text-xs text-[#6c7086] w-12 shrink-0">xs</span><p class="text-xs text-[#6c7086]">LABELS, CAPTIONS, FINE PRINT</p></div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mt-4">
+      <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-6">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-3">Weights</p>
+        <p class="font-light text-sm mb-1">Light (300)</p>
+        <p class="font-normal text-sm mb-1">Regular (400)</p>
+        <p class="font-medium text-sm mb-1">Medium (500)</p>
+        <p class="font-semibold text-sm mb-1">Semibold (600)</p>
+        <p class="font-bold text-sm mb-1">Bold (700)</p>
+        <p class="font-extrabold text-sm">Extra Bold (800)</p>
+      </div>
+      <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-6">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-3">Brand Numbers</p>
+        <p class="text-4xl font-bold tabular-nums text-lc-primary-500">$12,450</p>
+        <p class="text-2xl font-semibold tabular-nums mt-2">143 venues</p>
+        <p class="text-lg tabular-nums text-[#9399b2] mt-1">78.3% redemption rate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Report Preview -->
+  <section id="report" class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Report Components</h2>
+    <p class="text-sm text-[#6c7086] mb-8">Header and footer for PDF reports (light mode).</p>
+
+    <div class="bg-white rounded-2xl p-8 text-[#1a1a2e] shadow-lg">
+      <!-- Report Header -->
+      <div class="flex items-start justify-between border-b border-[#e5e7eb] pb-5 mb-6">
+        <div>
+          <h1 class="text-2xl font-bold text-[#1a1a2e]">Category Spend Analysis</h1>
+          <p class="text-sm text-[#6b7280] mt-1">Prepared for Acme Corp — Q4 2025</p>
+          <p class="text-xs text-[#6b7280] mt-2">Generated 13 Mar 2026</p>
+        </div>
+        <div class="w-8 h-8 rounded-lg bg-[#14A248] flex items-center justify-center text-white font-bold text-sm">LC</div>
+      </div>
+
+      <!-- Sample content -->
+      <div class="space-y-4 mb-8">
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-[#f8f8f8] rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold text-[#14A248]">$45,200</p>
+            <p class="text-xs text-[#6b7280] mt-1">Total Spend</p>
+          </div>
+          <div class="bg-[#f8f8f8] rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold">312</p>
+            <p class="text-xs text-[#6b7280] mt-1">Transactions</p>
+          </div>
+          <div class="bg-[#f8f8f8] rounded-xl p-4 text-center">
+            <p class="text-2xl font-bold">$144.87</p>
+            <p class="text-xs text-[#6b7280] mt-1">Avg Transaction</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Footer -->
+      <div class="border-t border-[#e5e7eb] pt-4 mt-8 flex items-center justify-between text-xs text-[#6b7280]">
+        <div>
+          <span class="font-semibold text-[#14A248]">LocalCard</span>
+          <span class="mx-2">·</span>
+          <span>localcard.io</span>
+        </div>
+        <div>Confidential — for intended recipient only.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section class="section mb-16">
+    <h2 class="text-2xl font-bold mb-2">Getting Started</h2>
+    <div class="bg-lc-surface-50 border border-lc-surface-200 rounded-2xl p-6 space-y-4">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-2">Install</p>
+        <code class="block text-sm bg-lc-surface-100 rounded-lg px-4 py-3 text-lc-accent-400">npm install ../localcard-ui</code>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-2">Tailwind Config</p>
+        <pre class="text-sm bg-lc-surface-100 rounded-lg px-4 py-3 text-[#a6adc8] overflow-x-auto">const localcard = require('@localcard/ui/preset');
+
+module.exports = {
+  presets: [localcard],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+};</pre>
+      </div>
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#6c7086] mb-2">Import Components</p>
+        <pre class="text-sm bg-lc-surface-100 rounded-lg px-4 py-3 text-[#a6adc8] overflow-x-auto">import { Button, Card, Badge } from '@localcard/ui';</pre>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="border-t border-white/5 py-8 text-center text-xs text-[#45475a]">
+  <span class="font-semibold text-lc-primary-500">LocalCard UI</span> · v0.1.0 · Built by Rocbot
+</footer>
+
+</body>
+</html>
