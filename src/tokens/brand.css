@@ -1,0 +1,76 @@
+/**
+ * LocalCard CSS Custom Properties
+ * Import in any project: @import '@localcard/ui/css';
+ * Or copy-paste for vanilla HTML projects.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Primary Green */
+  --lc-primary-50:  #e8f5ec;
+  --lc-primary-100: #c6e7cf;
+  --lc-primary-200: #9dd6ac;
+  --lc-primary-300: #6ec385;
+  --lc-primary-400: #3fb363;
+  --lc-primary-500: #14A248;
+  --lc-primary-600: #12903E;
+  --lc-primary-700: #0F6B35;
+  --lc-primary-800: #0D4F28;
+  --lc-primary-900: #08331A;
+
+  /* Accent Lime */
+  --lc-accent-300: #f0ff85;
+  --lc-accent-400: #DDFE57;
+  --lc-accent-500: #c4e220;
+
+  /* Error */
+  --lc-error-400: #ff6b6b;
+  --lc-error-500: #F30501;
+
+  /* Info Blue */
+  --lc-info-500: #1E6FA7;
+  --lc-info-600: #1B4D8E;
+
+  /* Navy */
+  --lc-navy: #1B2A4A;
+
+  /* Dark surfaces */
+  --lc-surface-0:   #0e0e18;
+  --lc-surface-50:  #141420;
+  --lc-surface-100: #1e1e2e;
+  --lc-surface-200: #313244;
+  --lc-surface-300: #45475a;
+  --lc-surface-400: #585b70;
+  --lc-surface-500: #6c7086;
+  --lc-surface-600: #9399b2;
+  --lc-surface-700: #a6adc8;
+  --lc-surface-800: #cdd6f4;
+  --lc-surface-900: #f0f0f5;
+
+  /* Light surfaces */
+  --lc-light-bg:      #ffffff;
+  --lc-light-surface: #f8f8f8;
+  --lc-light-muted:   #F5F5F5;
+  --lc-light-border:  #e5e7eb;
+  --lc-light-text:    #1a1a2e;
+  --lc-light-subtle:  #6b7280;
+
+  /* Typography */
+  --lc-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --lc-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Radii */
+  --lc-radius-sm:   0.375rem;
+  --lc-radius-md:   0.5rem;
+  --lc-radius-lg:   0.75rem;
+  --lc-radius-xl:   1rem;
+  --lc-radius-2xl:  1.25rem;
+  --lc-radius-full: 9999px;
+
+  /* Shadows */
+  --lc-shadow-sm:   0 1px 2px rgba(0,0,0,0.15);
+  --lc-shadow-md:   0 4px 12px rgba(0,0,0,0.15);
+  --lc-shadow-lg:   0 8px 25px rgba(0,0,0,0.2);
+  --lc-shadow-glow: 0 0 20px rgba(20,162,72,0.25);
+}

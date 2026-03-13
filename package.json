@@ -1,0 +1,17 @@
+{
+  "name": "@localcard/ui",
+  "version": "0.1.0",
+  "description": "LocalCard design system — brand tokens, Tailwind preset, and UI components",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./preset": "./src/tokens/tailwind-preset.js",
+    "./css": "./src/tokens/brand.css",
+    "./components/*": "./src/components/*",
+    "./assets/*": "./src/assets/*"
+  },
+  "files": ["src"],
+  "keywords": ["localcard", "design-system", "tailwind"],
+  "license": "UNLICENSED",
+  "private": true
+}
